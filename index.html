@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P-Ticket</title>
+
+    <!-- Include the stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- css framework connection  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="font-raleway container mx-auto min-h-screen">
+    <!--  Navbar Section -->
+    <nav>
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <a class="btn btn-ghost text-3xl font-extrabold">Adventure-Ticket</a>
+            </div>
+
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-lg">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Destination</a></li>
+                    <li><a>Search</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="btn border-[#1DD100] bg-[#1DD10033] text-[#1DD100]">Bus <img src="images/bus-icon.png"
+                        alt=""></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- main section -->
+    <main>
+        <!-- banner section -->
+        <section
+            class="h-[550px] bg-[url('images/banner.png')] bg-no-repeat bg-center object-cover relative flex justify-center">
+            <div class="absolute text-center text-white mt-20 space-y-10">
+                <h1 class="text-6xl font-bold">End-to-End Travel with <br> <span class="text-[#1DD100]">Adventure
+                        Paribahan</span></h1>
+                <p class="">Hop aboard our buses for an unforgettable journey filled with comfort, convenience, and
+                    excitement. <br> Prepare for an unforgettable journey with our buses ! </p>
+                <button id="ticket-btn" class="btn font-bold bg-[#1DD100] border-none">Buy Tickets</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Best Offer section -->
+        <section class="mt-24">
+            <div>
+                <h2 class="font-bold text-5xl text-center">Best offers for you</h2>
+            </div>
+            <div class="flex mt-16 justify-between">
+                <div class="bg-[#FFBF0F] flex items-center px-10 gap-16 rounded-2xl">
+                    <div class="font-inter">
+                        <h3 class="text-4xl font-bold">15% OFF</h3>
+                        <p class="font-semibold">If you buy 4 tickts <br> <span class="text-[#03071280]">You will get a
+                                discount</span></p>
+
+                    </div>
+                    <div>
+                        <img src="images/cupon-devider.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold">NEW15</h3>
+                        <p class="text-[#03071280]">Coupon Code</p>
+                    </div>
+                </div>
+                <div class="bg-[#1DD100] flex items-center px-10 gap-16 rounded-2xl">
+                    <div class="font-inter">
+                        <h3 class="text-4xl font-bold">20% OFF</h3>
+                        <p class="font-semibold">If couple buy tickets <br> <span class="text-[#03071280]">You will get
+                                a
+                                discount</span></p>
+
+                    </div>
+                    <div>
+                        <img src="images/cupon-devider.png" alt="">
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold">Couple 20</h3>
+                        <p class="text-[#03071280]">Coupon Code</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex justify-center mt-16">
+                <button class="btn border-[#1DD100] bg-[#1DD10033] text-[#1DD100]">See All Offers</button>
+            </div>
+        </section>
+
+
+        <!-- paribahan section -->
+        <section class="mt-24 bg-[#F7F8F8] rounded-2xl p-4">
+            <div class="text-center space-y-10">
+                <h2 class="font-bold text-5xl">Adventure Paribahan</h2>
+                <p>
+                    Embarking on a journey by bus is an exhilarating adventure, where the winding roads and scenic
+                    routes promise <br> a tapestry of discovery at every turn.
+                </p>
+            </div>
+
+            <div class="flex mt-10 bg-white p-4">
+                <div class="w-[70%]">
+                    <div class="flex justify-between">
+                        <div class="flex gap-5">
+                            <div>
+                                <img src="images/bus-logo.png" alt="">
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Adventure Paribahan</h3>
+                                <p>Coach-009-WEB ! AC_Business</p>
+                            </div>
+                        </div>
+
+                        <div class="flex bg-[#1DD10026] h-[56px] justify-center items-center px-4 rounded-xl">
+                            <div>
+                                <img src="images/seat-green.png" alt="">
+                            </div>
+                            <div>
+                                <h4><span class="px-2">40</span>Seats left</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-16 space-y-10">
+                        <div class="flex justify-between">
+                            <h4>Route</h4>
+                            <h4 class="font-semibold">Dhaka-Sylhet</h4>
+                        </div>
+                        <div class="flex justify-between">
+                            <h4>Departure Time</h4>
+                            <h4 class="font-semibold">9.00 PM</h4>
+                        </div>
+                        <div class="flex justify-between">
+                            <h4 class="bg-[#1DD10026] px-4 py-2">Boarding Point - Laxmipur</h4>
+                            <h4 class="bg-[#1DD10026] px-4 py-2">Dropping Point - Bogura</h4>
+                            <h4 class="bg-[#1DD10026] px-4 py-2">Est. Time - 11 Hour</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="images/info-devider.png" alt="">
+                </div>
+
+                <div class="w-[30%] flex justify-center items-center text-center">
+                    <div class="text-center">
+                        <img src="images/fare.png" alt="">
+                    <div>
+                    </div>
+                        <h3 class="text-3xl font-bold">550 Taka</h3>
+                        <p class="text-xl font-semibold">Per seat</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+
+
+
+    <script src="Js/index.js"></script>
+
+</body>
+
+</html>
