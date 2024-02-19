@@ -81,6 +81,8 @@ for (const btn of allBtn) {
     })
 }
 
+
+// grand total 
 for (const btn of allBtn) {
     btn.addEventListener('click', function grandTotalCost(e) {
         const grandTotalTicketPrice = document.getElementById('ticket-price').innerText;
@@ -92,10 +94,15 @@ for (const btn of allBtn) {
 
 }
 
+
+// grand total validatoin 
 function grandTotalCost() {
     const grandTotalTicketPrice = document.getElementById('ticket-price').innerText;
     let grandPrice = parseInt(grandTotalTicketPrice);
     const couponInput = document.getElementById('coupon-input').value;
+    const couponBtn = document.getElementById('coupon-btn');
+
+    grandPrice = grandPrice * selectedSeats;
     // NEW15--
     if (couponInput === "NEW15") {
         grandPrice = grandPrice * (85 / 100);
@@ -105,14 +112,21 @@ function grandTotalCost() {
         grandPrice = grandPrice * (80 / 100);
     }
 
+    if(couponInput === "NEW15" || couponInput === "Couple 20"){
+        document.getElementById('coupon-input').classList.add('hidden');
+        couponBtn.classList.add('hidden');
+    }
 
     // Set the grand total
     setInnerText('grand-total', grandPrice);
 }
 
+
+
 function applyCoupon() {
     grandTotalCost();
 }
+
 
 
 
