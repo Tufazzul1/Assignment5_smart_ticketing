@@ -5,16 +5,26 @@ function getParibahanById() {
     }
 }
 
-
+let selectedSeats = 0;
 const allBtn = document.getElementsByClassName('all-btn');
-
 let seatLeft = 40;
 //  for decrease the seat left
 for (const btn of allBtn) {
-    btn.addEventListener('click', function (e) {
-        seatLeft--
-        setInnerText('seat-left', seatLeft)
-        btn.style.backgroundColor = '#1DD100';
+    btn.addEventListener('click', function handleClick(e) {
+        if (!btn.disabled) {
+            seatLeft--
+            setInnerText('seat-left', seatLeft);
+
+            setButtonBackgroundColor(btn, '#1DD100');
+
+            selectedSeats++;
+
+            btn.disabled = true;
+
+            if (selectedSeats === 4) {
+                disableRemainingButtons();
+            }
+        }
     });
 }
 
@@ -23,11 +33,21 @@ let grandPrice = 0;
 let normalPrice = 0;
 let totalSeat = 0;
 
+// increse the total seat sount
 for (const btn of allBtn) {
     btn.addEventListener('click', function (e) {
-        // for increase the total seat count
-        totalSeat = totalSeat + 1;
-        setInnerText('total-seat', totalSeat);
+        if (totalSeat < 4) {
+            totalSeat = totalSeat + 1;
+            setInnerText('total-seat', totalSeat);
+        }
+        else {
+            return totalSeat;
+        }
+    })
+}
+
+for (const btn of allBtn) {
+    btn.addEventListener('click', function (e) {
 
         // appended the element of the table
         const newSeat = document.getElementById('bus-seat');
@@ -62,14 +82,38 @@ for (const btn of allBtn) {
 }
 
 for (const btn of allBtn) {
-    btn.addEventListener('click', function (e) {
+    btn.addEventListener('click', function grandTotalCost(e) {
         const grandTotalTicketPrice = document.getElementById('ticket-price').innerText;
         const convertedGrandTicketPrice = parseInt(grandTotalTicketPrice);
         grandPrice = grandPrice + convertedGrandTicketPrice;
         setInnerText('grand-total', grandPrice);
+
     })
 
 }
+
+function grandTotalCost() {
+    const grandTotalTicketPrice = document.getElementById('ticket-price').innerText;
+    let grandPrice = parseInt(grandTotalTicketPrice);
+    const couponInput = document.getElementById('coupon-input').value;
+    // NEW15--
+    if (couponInput === "NEW15") {
+        grandPrice = grandPrice * (85 / 100);
+    }
+    // couple 20 --
+    if (couponInput === "Couple 20") {
+        grandPrice = grandPrice * (80 / 100);
+    }
+
+
+    // Set the grand total
+    setInnerText('grand-total', grandPrice);
+}
+
+function applyCoupon() {
+    grandTotalCost();
+}
+
 
 
 function setInnerText(id, value) {
@@ -78,11 +122,24 @@ function setInnerText(id, value) {
 }
 
 
+function setButtonBackgroundColor(button, color) {
+    button.style.backgroundColor = color;
+}
 
-// function setBackgroundColorById(elementId){
-//     const element = document.getElementById(elementId);
-//     element.classList.add('bg-[#1DD100]');
-// }
+function disableRemainingButtons() {
+    for (const btn of allBtn) {
+        if (!btn.disabled) {
+            btn.disabled = true;
+        }
+    }
+}
+
+
+
+
+
+
+
 
 
 
