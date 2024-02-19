@@ -116,6 +116,9 @@ function grandTotalCost() {
         document.getElementById('coupon-input').classList.add('hidden');
         couponBtn.classList.add('hidden');
     }
+    else{
+        alert('wrong input');
+    }
 
     // Set the grand total
     setInnerText('grand-total', grandPrice);
